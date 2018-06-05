@@ -1,0 +1,54 @@
+
+    {% include 'news/basetop.html' %}
+    <script src="/static/news/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="/static/news/js/tinymce_setup.js"></script>
+{#<script type="text/javascript" src="/static/news/js/user_news_update.js"></script>#}
+<body class="inframe_body">
+<form class="release_form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <h3>新闻修改</h3>
+    <div class="form-group">
+        <label>新闻标题：</label>
+        <input type="text" class="input_txt2" name="title" value="{{ news.title }}">
+    </div>
+    <div class="form-group">
+        <label>新闻分类：</label>
+        <select class="sel_opt" name="category_id">
+            {% for cate in category %}
+                {% if cate.id==news.category.id %}
+                <option value="{{ cate.id }}">{{ cate.name }}</option>
+                {% else %}
+                <option value="{{ cate.id }}">{{ cate.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>摘要：</label>
+        <textarea class="input_multxt" name="summary">{{ news.summary }}</textarea>
+    </div>
+    <div class="form-group">
+        <label>上传图片：</label>
+        <img src="{{ news.new_pic }}"/>
+        <input type="file" name="news_pic" class="input">
+    </div>
+    <div class="form-group">
+        <label>内容：</label>
+        <div class="fl">
+            <input class="input_area" id="rich_content" name="content" value="{{ news.content }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="发 布" class="input_sub input_sub2">
+    </div>
+    {% if msg %}
+        <div class="error_tip2" style="display:block;">{{ msg }}</div>
+    {% endif %}
+</form>
+<script>
+    $(function () {
+        window.parent.fnSetIframeHeight(900);
+    })
+</script>
+</body>
+</html>
