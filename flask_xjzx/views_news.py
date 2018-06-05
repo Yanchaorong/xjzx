@@ -45,3 +45,9 @@ def newslist():
         }
         news_list2.append(new_dict)
     return jsonify(news_list=news_list2)
+@news_blueprint.route('/datail')
+def datail():
+    return render_template('news/detail.html')
+@news_blueprint.route('/other')
+def other():
+    return render_template('news/other.html')

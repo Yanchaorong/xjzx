@@ -20412,3 +20412,65 @@ INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 11:50:22] "GET /newslist?categor
 INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 11:50:27] "GET /newslist?category_id=2 HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 11:50:32] "GET /newslist?category_id=2 HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 11:50:36] "GET /newslist?category_id=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in '/home/python/Desktop/xjzx/flask_xjzx/views_news.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 259-272-635
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:12] "GET /newslist?page=2&category_id=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:12] "GET /static/news/images/C:/fakepath/cat.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:12] "GET /static/news/images/null HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:14] "GET /newslist?page=1&category_id=0 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:15] "GET /newslist?page=1&category_id=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:17] "GET /newslist?page=1&category_id=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:19] "GET /61 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:21] "GET /static/news/images/clock.png HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:30] "GET /dateil HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /datail HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /css/reset.css HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /css/main.css HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /js/jquery-1.12.4.min.js HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /js/detail.js HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/logo.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/person01.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/cat.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/worm.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/user_pic.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:33:48] "GET /images/pic_code.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /datail HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/js/detail.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/css/reset.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/css/main.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/js/jquery-1.12.4.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/logo.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/person01.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/cat.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/worm.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/user_pic.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /images/pic_code.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/comment_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/collect_icons.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/zan_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/reply_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/focus_icons.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:34:36] "GET /static/news/images/clock.png HTTP/1.1" 304 -
+INFO _internal.py:88  * Detected change in '/home/python/Desktop/xjzx/flask_xjzx/views_news.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 259-272-635
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /other HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /css/reset.css HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /css/jquery.pagination.css HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /js/jquery-1.12.4.min.js HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /css/main.css HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /js/jquery.pagination.min.js HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /js/other.js HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /images/logo.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /images/person01.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /images/user_pic.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:36:46] "GET /images/pic_code.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /datail HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /images/person01.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /images/worm.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /images/cat.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /images/user_pic.png HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [05/Jun/2018 20:37:13] "GET /images/pic_code.png HTTP/1.1" 404 -
