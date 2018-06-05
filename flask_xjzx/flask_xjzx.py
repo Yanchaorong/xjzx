@@ -17,4 +17,5 @@ Migrate(app, db)
 manager.add_command('bbb', MigrateCommand)
 
 if __name__ == '__main__':
-    manager.run()
+    #manager.run()
+    app.run(port=8000)

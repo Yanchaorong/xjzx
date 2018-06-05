@@ -4,10 +4,16 @@ from flask import Flask
 from views_admin import admin_blueprint
 from views_news import news_blueprint
 from  views_user import  user_blueprint
+from flask_wtf.csrf import CSRFProtect
+from flask_session import Session
+
 # 创建app配置
-def create_app(config):
+def create_app( config):
     app = Flask(__name__)
     app.config.from_object(config)
+    CSRFProtect(app)
+    Session(app)
+
     # 设置日志记录等级
     logging.basicConfig(level=logging.DEBUG)  # 调试debug级
     # 创建日志记录器，指明日志保存的路径、每个日志文件的最大大小、保存的日志文件个数上限

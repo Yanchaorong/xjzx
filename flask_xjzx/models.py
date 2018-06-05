@@ -11,8 +11,8 @@ from datetime import datetime
 
 # 定义模型类
 class BaseModel(object):
-    create_time = db.Column(db.DateTime, default=datetime.now())
-    update_time = db.Column(db.DateTime, default=datetime.now())
+    create_time = db.Column(db.DateTime, default=datetime.now)
+    update_time = db.Column(db.DateTime, default=datetime.now)
     isDelete = db.Column(db.Boolean, default=False)
 
 
@@ -44,7 +44,7 @@ class NewsInfo(db.Model, BaseModel):
     __tablename__ = 'news_info'
     id = db.Column(db.Integer, primary_key=True)
     category_id = db.Column(db.Integer, db.ForeignKey('news_category.id'))
-    pic = db.Column(db.String(50))
+    pic = db.Column(db.String(50),default='user_pic.png')
     title = db.Column(db.String(30))
     summary = db.Column(db.String(200))
     content = db.Column(db.Text)
@@ -70,7 +70,9 @@ class NewsInfo(db.Model, BaseModel):
     #         'author_id': self.user_id,
     #         'udpate_time': self.update_time.strftime('%Y-%m-%d')
     #     }
-
+    @property
+    def new_pic(self):
+        return '/static/news/images/'+self.pic
 
 class UserInfo(db.Model, BaseModel):
     __tablename__ = 'user_info'
@@ -123,9 +125,11 @@ class UserInfo(db.Model, BaseModel):
     def check_pwd(self, pwd):
         return check_password_hash(self.password_hash, pwd)
 
-        # @property
-        # def avatar_url(self):
-        #     return current_app.config.get('QINIU_URL') + self.avatar
+    @property
+    def avater_for(self):
+        return '/static/news/images/'+self.avatar
+
+
 
 
 class NewsComment(db.Model, BaseModel):

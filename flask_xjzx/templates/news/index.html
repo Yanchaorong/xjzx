@@ -3,100 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>首页-新经资讯</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/news/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/news/css/main.css">
+    <script type="text/javascript" src="/static/news/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/static/news/js/main.js"></script>
+    <script type="text/javascript" src="/static/news/js/index.js"></script>
+    <script type="text/javascript" src="/static/news/js/vue.min.js"></script>
 </head>
 <body>
     <div class="header_con">
         <div class="header">
-            <a href="#" class="logo fl"><img src="images/logo.png" alt="logo"></a>
+            <a href="#" class="logo fl"><img src="/static/news/images/logo.png" alt="logo"></a>
             <ul class="menu fl">
                 <li class="active" data-cid="0"><a href="javascript:;">最新</a></li>
-                <li data-cid="1"><a href="javascript:;">股市</a></li>
-                <li data-cid="2"><a href="javascript:;">债市</a></li>
-                <li data-cid="3"><a href="javascript:;">商品</a></li>
-                <li data-cid="4"><a href="javascript:;">外汇</a></li>
-                <li data-cid="5"><a href="javascript:;">公司</a></li>
+                {% for cate in category %}
+                <li data-cid="{{ cate.id }}"><a href="javascript:;">{{ cate.name }}</a></li>
+                {% endfor %}
+
             </ul>
-            <div class="user_btns fr">
+        {% if user %}
+            <div class="user_btns fr" style="display: none">
                 <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
             </div>
             <!-- 用户登录后显示下面，隐藏上面 -->
-            <div class="user_login fr">
-                <img src="images/person01.png" class="lgin_pic">
-                <a href="#">用户张三</a>
-                <a href="#">退出</a>
+            <div class="user_login fr" style="display: block">
+                <img src="{{ user.avater_for }}" class="lgin_pic">
+                <a href="/user/" id="nick_name">{{ user.nick_name }}</a>
+                <a href="javascrpit:;" id="logout">退出</a>
             </div>
+        {% else %}
+         <div class="user_btns fr" style="display: block">
+                <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
+            </div>
+            <!-- 用户登录后显示下面，隐藏上面 -->
+            <div class="user_login fr" style="display: none">
+                <img src="/static/news/images/person01.png" class="lgin_pic">
+                <a href="/user/" id="nick_name">用户张三</a>
+                <a href="javascrpit:;" id="logout">退出</a>
+            </div>
+        {% endif %}
         </div>
     </div>
-    
+
     <div class="conter_con">
         <ul class="list_con fl">
-            <li>
-                <a href="#" class="news_pic fl"><img src="images/news_pic.jpg"></a>
-                <a href="#" class="news_title fl">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市软银计划将手机业务分拆上市</a>
-                <a href="#" class="news_detail fl">据日经新闻网，软银计划让旗下核心业务移动手机部门SoftBank Corp.分拆上市，或募资2万亿日元(约180亿美元)。随着软银逐步向投资公司转型，此举旨在给手机业务部门更多自主权。</a>
-                <div class="author_info fl">
-                    <div class="author fl">
-                        <img src="images/person.png" alt="author">
-                        <a href="#">乐鸣</a>
-                    </div>
-                    <div class="time fl">2017-01-01 00:00:00</div>
+            <li v-for="news in news_list">
+            <a :href="'/'+news.id" class="news_pic fl"><img :src="'/static/news/images/'+news.pic"></a>
+            <a :href="'/'+news.id" class="news_title fl">[[news.title]]</a>
+            <a :href="'/'+news.id" class="news_detail fl">[[news.summary]]</a>
+            <div class="author_info fl">
+                <div class="author fl">
+                    <img :src="news.user_avater" alt="author" style="width:30px; height:30px;">
+                    <a :href="'/user/'+news.user_id">[[news.user_nick_name]]</a>
                 </div>
-            </li>
-            <li>
-                <a href="#" class="news_pic fl"><img src="images/news_pic.jpg"></a>
-                <a href="#" class="news_title fl">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</a>
-                <a href="#" class="news_detail fl">据日经新闻网，软银计划让旗下核心业务移动手机部门SoftBank Corp.分拆上市，或募资2万亿日元(约180亿美元)。随着软银逐步向投资公司转型，此举旨在给手机业务部门更多自主权。</a>
-                <div class="author_info fl">
-                    <div class="source fl">
-                        来源：广州日报
-                    </div>
-                    <div class="time fl">2017-01-01 00:00:00</div>
-                </div>
-            </li>
-            <li>
-                <a href="#" class="news_pic fl"><img src="images/news_pic.jpg"></a>
-                <a href="#" class="news_title fl">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</a>
-                <a href="#" class="news_detail fl">据日经新闻网，软银计划让旗下核心业务移动手机部门SoftBank Corp.分拆上市，或募资2万亿日元(约180亿美元)。随着软银逐步向投资公司转型，此举旨在给手机业务部门更多自主权。</a>
-                <div class="author_info fl">
-                    <div class="author fl">
-                        <img src="images/person.png" alt="author">
-                        <a href="#">乐鸣</a>
-                    </div>
-                    <div class="time fl">2017-01-01 00:00:00</div>
-                </div>
-            </li>
-            <li>
-                <a href="#" class="news_pic fl"><img src="images/news_pic.jpg"></a>
-                <a href="#" class="news_title fl">日本史上最大IPO之一要来了：软银计划将手机业务分拆上市</a>
-                <a href="#" class="news_detail fl">据日经新闻网，软银计划让旗下核心业务移动手机部门SoftBank Corp.分拆上市，或募资2万亿日元(约180亿美元)。随着软银逐步向投资公司转型，此举旨在给手机业务部门更多自主权。</a>
-                <div class="author_info fl">
-                    <div class="source fl">
-                        来源：广州日报
-                    </div>
-                    <div class="time fl">2017-01-01 00:00:00</div>
-                </div>
-            </li>
+                <div class="time fl">[[news.update]]</div>
+            </div>
+        </li>
+        </li>
+
         </ul>
         <div class="rank_con fr">
             <div class="rank_title">
                 <h3>点击排行</h3>
             </div>
             <ul class="rank_list">
-                <li><span class="first">1</span><a href="#">势如破竹！人民币再度连闯四道关口 在岸、离岸双双升破6.42</a></li>
-                <li><span class="second">2</span><a href="#">凛冬已至，还有多少银行人在假装干银行</a></li>
-                <li><span class="third">3</span><a href="#">人民日报：部分城市楼市放松限制引关注，楼市调控不会“拉抽屉”</a></li>
-                <li><span>4</span><a href="#">势如破竹！人民币再度连闯四道关口 在岸、离岸双双升破6.42</a></li>
-                <li><span>5</span><a href="#">凛冬已至，还有多少银行人在假装干银行</a></li>
-                <li><span>6</span><a href="#">人民日报：部分城市楼市放松限制引关注，楼市调控不会“拉抽屉”</a></li>
+                {% for count in count_list %}
+                <li><span class="click{{ loop.index }}">{{ loop.index }}</span><a href="/{{ count.id }}">{{ count.title }}</a></li>
+                {% endfor %}
+
             </ul>
         </div>
     </div>
-    <div class="footer">        
+    <div class="footer">
         <div class="footer_links">
             <a href="">关于我们</a>
             <span>|</span>
@@ -111,11 +89,11 @@
 电话：010-****888    京ICP备*******8号
         </p>
     </div>
-    
+
     <!-- 登录表单 -->
-    <form class="login_form_con">
-        <div class="login_form">
-            <div class="login_title">
+    <form class="login_form_con" >
+        <div class="login_form" >
+            <div class="login_title" >
                 <h3>登 录</h3>
                 <a href="javascript:;" class="shutoff"></a>
             </div>
@@ -134,7 +112,7 @@
         </div>
         <div class="mask"></div>
     </form>
-
+    <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
     <!-- 注册表单 -->
     <form class="register_form_con">
         <div class="register_form">
@@ -150,7 +128,7 @@
             <div class="form_group">
                 <input type="text" name="code_pwd" id="imagecode" class="code_pwd">
                 <div class="input_tip">图形验证码</div>
-                <img src="images/pic_code.png" class="get_pic_code" onclick="generateImageCode()">
+                <img src="/user/image_yzm?1" class="get_pic_code" onclick="generateImageCode()">
                 <div id="register-image-code-err" class="error_tip">图形码不能为空</div>
             </div>
             <div class="form_group">
